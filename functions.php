@@ -143,7 +143,12 @@ add_action( 'widgets_init', 'loren_widgets_init' );
  * Enqueue scripts and styles.
  */
 function loren_scripts() {
-	wp_enqueue_style( 'loren-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'style', get_stylesheet_uri());
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
+	wp_enqueue_style( 'mdb', get_template_directory_uri() . '/assets/css/mdb.min.css' );
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/style.css' );
+	wp_enqueue_style( 'error', get_template_directory_uri() . '/assets/css/access.css' );
+
 	wp_style_add_data( 'loren-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'loren-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );

@@ -1,59 +1,83 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package loren
- */
-
-?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="keywords"
+          content="Loren - студія весільного декору та флористики"/>
+    <meta name="description"
+          content="Івано - Франківськ. Оформлення банкетних залів, весільна флористика, поліграфія, зона молодих,
+          арка для дарування, фотозона, букет нареченої, квіти на столи гостей."/>
+    <meta http-equiv="content-language" content="ru">
+    <title>Loren - студія весільного декору та флористики</title>
+    <!--fav icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav_icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav_icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav_icon/favicon-16x16.png">
+    <link rel="manifest" href="img/fav_icon/site.webmanifest">
+    <link rel="mask-icon" href="img/fav_icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 	<?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'loren' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$loren_description = get_bloginfo( 'description', 'display' );
-			if ( $loren_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $loren_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'loren' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+<body>
+<!--NAV MENU-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand font-weight-bold">L<i class="far fa-dot-circle fa-1x"></i>Ren</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu"
+                    aria-controls="navMenu"
+                    aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mr-auto scrolling-navbar">
+                    <li class="nav-link active"><a href="index.html"
+                                                   class="nav-link waves-effect waves-light">Головна</a></li>
+                    <li class="nav-link"><a href="src/adout-us.html" class="nav-link waves-effect waves-light">Про
+                        нас</a></li>
+                    <li class="nav-link"><a href="src/our-services.html" class="nav-link waves-effect waves-light">Наші
+                        послуги</a></li>
+                    <li class="nav-link"><a href="src/galery.html" class="nav-link waves-effect waves-light">Галерея</a>
+                    </li>
+                    <li class="nav-link"><a href="src/contact.html"
+                                            class="nav-link waves-effect waves-light">Контакти</a></li>
+                </ul>
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item"><a href="mailto:loren.decor@ukr.net" class="nav-link waves-effect waves-light"><i
+                            class="fas fa-envelope"></i></a>
+                    </li>
+                    <li class="nav-item"><a href="https://www.facebook.com/oksanavolodynyrivna?ref=bookmarks"
+                                            target="_blank" class="nav-link waves-effect waves-light"><i
+                            class="fab fa-facebook"></i></a>
+                    </li>
+                    <li class="nav-item"><a href="https://www.instagram.com/wedding_decor_loren/?hl=ru" target="_blank"
+                                            class="nav-link waves-effect waves-light"><i
+                            class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="intro" class="view">
+        <div class="mask rgba-black-strong">
+            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-md-10">
+                        <h2 class="display-4  white-text pt-2 mb-1 unic-font">
+                            Wedding Decor Loren
+                        </h2>
+                        <hr class="hr-light">
+                        <h4 class="white-text my-4">Студія весільного декору та флористики</h4>
+                        <a href="src/adout-us.html" class="btn btn-outline-white waves-effect waves-light">Про нас<i
+                                class="fas fa-book pl-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
