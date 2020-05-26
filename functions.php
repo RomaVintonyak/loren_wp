@@ -53,7 +53,6 @@ if ( ! function_exists( 'loren_setup' ) ) :
 				'NavMenu' => 'Top Menu' ,
 			)
 		);
-
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -103,7 +102,6 @@ if ( ! function_exists( 'loren_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'loren_setup' );
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *

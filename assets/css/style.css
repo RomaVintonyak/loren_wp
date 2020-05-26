@@ -15,7 +15,9 @@ header,
 #intro {
   height: 100%;
 }
-
+body.logged-in .fixed-top{
+  top: 30px;
+}
 #intro {
   background: url("../img/index/bg2.jpg") no-repeat center center fixed;
   background-size: cover;

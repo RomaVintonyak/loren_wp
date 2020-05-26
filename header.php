@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 <!--NAV MENU-->
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
@@ -42,9 +42,9 @@
                 'menu_class'      => 'navbar-nav mr-auto scrolling-navbar', 
                 'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
                 'depth'           => 0,
-            )); ?>
+            ));  ?>
             <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav mr-auto scrolling-navbar">
+                <!--<ul class="navbar-nav mr-auto scrolling-navbar">
                     <li class="nav-link active"><a href="index.html"
                                                    class="nav-link waves-effect waves-light">Головна</a></li>
                     <li class="nav-link"><a href="src/adout-us.html" class="nav-link waves-effect waves-light">Про
@@ -55,7 +55,7 @@
                     </li>
                     <li class="nav-link"><a href="src/contact.html"
                                             class="nav-link waves-effect waves-light">Контакти</a></li>
-                </ul>
+                </ul>-->
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item"><a href="mailto:loren.decor@ukr.net" class="nav-link waves-effect waves-light"><i
                             class="fas fa-envelope"></i></a>
