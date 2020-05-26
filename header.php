@@ -34,6 +34,15 @@
                     aria-expanded="false" aria-label="Toggle Navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <?php wp_nav_menu(array(
+                'theme_location'  => 'NavMenu',
+                'container'       => 'div', 
+                'container_class' => 'collapse navbar-collapse', 
+                'container_id'    => 'navMenu',
+                'menu_class'      => 'navbar-nav mr-auto scrolling-navbar', 
+                'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+                'depth'           => 0,
+            )); ?>
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav mr-auto scrolling-navbar">
                     <li class="nav-link active"><a href="index.html"
