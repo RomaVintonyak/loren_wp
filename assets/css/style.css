@@ -22,7 +22,16 @@ body.logged-in .fixed-top{
   background: url("../img/index/bg2.jpg") no-repeat center center fixed;
   background-size: cover;
 }
-
+.social__position{
+  width: 100%;
+  justify-content: flex-end!important;
+  align-items: center;
+}
+@media (max-width: 991px){
+  .social__position{
+    justify-content: flex-start!important;
+  }
+}
 .top-nav-collapse {
   background-color: #717171;
 }

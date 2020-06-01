@@ -28,7 +28,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
         <div class="container-fluid">
-            <a href="index.html" class="navbar-brand font-weight-bold">L<i class="far fa-dot-circle fa-1x"></i>Ren</a>
+            <a href="<?php get_home_url(); ?>" class="navbar-brand font-weight-bold">L<i class="far fa-dot-circle fa-1x"></i>Ren</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu"
                     aria-controls="navMenu"
                     aria-expanded="false" aria-label="Toggle Navigation">
@@ -42,21 +42,22 @@
                 'menu_class'      => 'navbar-nav mr-auto scrolling-navbar', 
                 'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
                 'depth'           => 0,
-            ));  ?>
-            <div class="collapse navbar-collapse" id="navMenu">
-                <!--<ul class="navbar-nav mr-auto scrolling-navbar">
-                    <li class="nav-link active"><a href="index.html"
-                                                   class="nav-link waves-effect waves-light">Головна</a></li>
-                    <li class="nav-link"><a href="src/adout-us.html" class="nav-link waves-effect waves-light">Про
-                        нас</a></li>
-                    <li class="nav-link"><a href="src/our-services.html" class="nav-link waves-effect waves-light">Наші
-                        послуги</a></li>
-                    <li class="nav-link"><a href="src/galery.html" class="nav-link waves-effect waves-light">Галерея</a>
-                    </li>
-                    <li class="nav-link"><a href="src/contact.html"
-                                            class="nav-link waves-effect waves-light">Контакти</a></li>
-                </ul>-->
-                <ul class="navbar-nav nav-flex-icons">
+            ));  
+            
+            wp_nav_menu(array(
+                'theme_location'  => 'NavSocial',
+                'container'       => 'div', 
+                'container_class' => 'collapse navbar-collapse', 
+                'container_id'    => 'navMenu',
+                'menu_class'      => 'navbar-nav nav-flex-icons social__position', 
+                'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+                'depth'           => 0,
+            ));  
+
+            ?>
+            
+                
+                <!--<ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item"><a href="mailto:loren.decor@ukr.net" class="nav-link waves-effect waves-light"><i
                             class="fas fa-envelope"></i></a>
                     </li>
@@ -68,8 +69,7 @@
                                             class="nav-link waves-effect waves-light"><i
                             class="fab fa-instagram"></i></a>
                     </li>
-                </ul>
-            </div>
+                </ul>-->
         </div>
     </nav>
     <div id="intro" class="view">

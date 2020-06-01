@@ -51,6 +51,7 @@ if ( ! function_exists( 'loren_setup' ) ) :
 		register_nav_menus(
 			array(
 				'NavMenu' => 'Top Menu' ,
+				'NavSocial' => 'Top Social' ,
 			)
 		);
 		/*
@@ -102,6 +103,46 @@ if ( ! function_exists( 'loren_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'loren_setup' );
+
+/*filter to css nav menu*/
+add_filter( 'nav_menu_css_class', '__return_empty_array' );
+add_filter( 'nav_menu_item_id', '__return_empty_array' );
+//main menu
+add_filter( 'nav_menu_css_class', 'add_my_class_li', 10, 4 );
+function add_my_class_li( $classes, $item, $args, $depth ){
+	if($args->theme_location == 'NavMenu') {
+		$classes[] = 'nav-link';
+	  }
+	return $classes;
+}
+//social nav menu
+add_filter( 'nav_menu_css_class', 'add_my_class_li_social', 10, 4 );
+function add_my_class_li_social( $classes, $item, $args, $depth ){
+	if($args->theme_location == 'NavSocial') {
+		$classes[] = 'nav-item';
+	  }
+	return $classes;
+}
+//main menu
+add_filter( 'nav_menu_link_attributes', 'add_mu_class_a', 10, 4 );
+function add_mu_class_a( $atts, $item, $args, $depth ) {
+	if($args->theme_location == 'NavMenu') {
+		$class = 'nav-link waves-effect waves-light';
+		$atts['class'] = isset( $atts['class'] ) ? "{$atts['class']} $class" : $class;
+	}
+	return $atts;
+}
+//social nav menu
+add_filter( 'nav_menu_link_attributes', 'add_mu_class_a_social', 10, 4 );
+function add_mu_class_a_social( $atts, $item, $args, $depth ) {
+	if($args->theme_location == 'NavSocial') {
+		$class = 'nav-link waves-effect waves-light';
+		$atts['class'] = isset( $atts['class'] ) ? "{$atts['class']} $class" : $class;
+		$target = '_blank';
+		$atts['target'] = isset( $atts['target'] ) ? "{$atts['target']} $target" : $target;
+	}
+	return $atts;
+}
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
