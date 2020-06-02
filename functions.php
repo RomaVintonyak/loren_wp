@@ -129,6 +129,10 @@ function add_mu_class_a( $atts, $item, $args, $depth ) {
 	if($args->theme_location == 'NavMenu') {
 		$class = 'nav-link waves-effect waves-light';
 		$atts['class'] = isset( $atts['class'] ) ? "{$atts['class']} $class" : $class;
+		if ( $item->current ) {
+			$class = 'active';
+			$atts['class'] = isset( $atts['class'] ) ? "{$atts['class']} $class" : $class;
+		}
 	}
 	return $atts;
 }
@@ -191,6 +195,7 @@ function loren_scripts() {
 
 	wp_style_add_data( 'loren-style', 'rtl', 'replace' );
 
+	wp_deregister_script( 'jquery' );
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-3.3.1.min.js');
 	wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/assets/js/bootstrap.min.js');
 	wp_enqueue_script( 'popperjs', get_template_directory_uri() . '/assets/js/popper.min.js');

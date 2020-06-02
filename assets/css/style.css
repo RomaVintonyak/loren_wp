@@ -23,6 +23,8 @@ body.logged-in .fixed-top{
   background-size: cover;
 }
 .social__position{
+  /*margin: 0;
+  padding: 0;*/
   width: 100%;
   justify-content: flex-end!important;
   align-items: center;

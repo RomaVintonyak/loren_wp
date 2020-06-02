@@ -10,13 +10,13 @@
           content="Івано - Франківськ. Оформлення банкетних залів, весільна флористика, поліграфія, зона молодих,
           арка для дарування, фотозона, букет нареченої, квіти на столи гостей."/>
     <meta http-equiv="content-language" content="ru">
-    <title>Loren - студія весільного декору та флористики</title>
+    <title><?php the_title(); ?></title>
     <!--fav icon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/fav_icon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/fav_icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/fav_icon/favicon-16x16.png">
-    <link rel="manifest" href="img/fav_icon/site.webmanifest">
-    <link rel="mask-icon" href="img/fav_icon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory(); ?>/assets/img/fav_icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory(); ?>/assets/img/fav_icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory(); ?>/assets/img/fav_icon/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo get_template_directory(); ?>/assets/img/fav_icon/site.webmanifest">
+    <link rel="mask-icon" href="<?php echo get_template_directory(); ?>/assets/img/fav_icon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <!-- Font Awesome -->
@@ -28,7 +28,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
         <div class="container-fluid">
-            <a href="<?php get_home_url(); ?>" class="navbar-brand font-weight-bold">L<i class="far fa-dot-circle fa-1x"></i>Ren</a>
+            <a href="<?php get_home_url(); ?>" class="navbar-brand font-weight-bold"><?php bloginfo('name'); ?></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu"
                     aria-controls="navMenu"
                     aria-expanded="false" aria-label="Toggle Navigation">
@@ -43,7 +43,6 @@
                 'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
                 'depth'           => 0,
             ));  
-            
             wp_nav_menu(array(
                 'theme_location'  => 'NavSocial',
                 'container'       => 'div', 
@@ -53,23 +52,7 @@
                 'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
                 'depth'           => 0,
             ));  
-
             ?>
-            
-                
-                <!--<ul class="navbar-nav nav-flex-icons">
-                    <li class="nav-item"><a href="mailto:loren.decor@ukr.net" class="nav-link waves-effect waves-light"><i
-                            class="fas fa-envelope"></i></a>
-                    </li>
-                    <li class="nav-item"><a href="https://www.facebook.com/oksanavolodynyrivna?ref=bookmarks"
-                                            target="_blank" class="nav-link waves-effect waves-light"><i
-                            class="fab fa-facebook"></i></a>
-                    </li>
-                    <li class="nav-item"><a href="https://www.instagram.com/wedding_decor_loren/?hl=ru" target="_blank"
-                                            class="nav-link waves-effect waves-light"><i
-                            class="fab fa-instagram"></i></a>
-                    </li>
-                </ul>-->
         </div>
     </nav>
     <div id="intro" class="view">
